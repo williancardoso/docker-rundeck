@@ -1,0 +1,26 @@
+name: My Resource Model Source
+version: 1.0
+rundeckPluginVersion: 1.0
+author: willian
+date: 21/04/2018
+providers:
+    - name: VMware vCenter
+      service: ResourceModelSource
+      plugin-type: script
+      script-interpreter: bash -c
+      script-file: vcenter.sh
+      resource-format: resourceyaml
+      config:
+        - type: Integer
+          name: host
+          title: Host
+          description: Enter the host to vCenter
+        - type: String
+          name: user
+          title: User
+          description: Enter the User to vCenter
+        - type: FreeSelect
+          name: password
+          title: Password
+          description: Enter the Password to vCenter
+          required: true
